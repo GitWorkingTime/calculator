@@ -18,6 +18,9 @@ function multiply(a, b) {
 }
 
 function divide(a, b) {
+    if( b == 0 ) {
+        return "ERROR";
+    }
     return a / b;
 }
 
@@ -51,12 +54,12 @@ for( let i = 0; i < 10; ++i ) {
 
 const btns = document.querySelector(".buttons");
 const equation = document.querySelector(".equation");
-const result = document.querySelector(".result");
+const final = document.querySelector(".result");
 let numStr = "";
 
 function clearScreen(){
     equation.textContent = "";
-    result.textContent = "";
+    final.textContent = "";
 }
 
 
@@ -71,11 +74,11 @@ btns.addEventListener("click", (evt) => {
             .filter(char => numericals.includes(char))
             .join('');
         
-        if( numStr.length == 0 && val == "0") {
+        if( equation.textContent.length == 0 && val == "0") {
             return;
         }
 
-        if(result.textContent != "") {
+        if(final.textContent != "") {
             clearScreen();
         }
         
@@ -146,6 +149,10 @@ btns.addEventListener("click", (evt) => {
             for( let i = 0; i < eq.length; ++i ) {
                 if(eq[i] == '*' || eq[i] == '/') {
                     let result = operate(eq[i], eq[i - 1], eq[i + 1]);
+                    if( result == "ERROR") {
+                        final.textContent = "ERROR";
+                        return;
+                    }
                     eq.splice(i - 1, 3, result);
                 }
             }
@@ -160,7 +167,7 @@ btns.addEventListener("click", (evt) => {
             ++i;
         }
 
-        result.textContent = eq[0];
+        final.textContent = eq[0];
     }
 
 });
