@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+html {
+    font-family: "Roboto", sans-serif;
+    font-size: 24px;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calc-body {
+    height: 600px;
+    width: 400px;
+    border-radius: 5px;
+    background-color: rgb(75, 75, 75);
+    padding: 10px;
+}
+
+.display {
+    height: 50px;
+    width: calc(100% - 10px);
+    background-color: rgb(236, 236, 236);
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.buttons {
+    display: flex;
+    margin-top: 10px;
+    border-radius: 5px;
+    background-color: rgb(170, 170, 170);
+    height: calc(100% - 70px);
+}
+
+.numbers {
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: 245px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 50px 30px 30px 30px;
+
+}
+
+.num {
+    display: flex;
+    flex-shrink: 0;
+    width: 75px;
+    height: 75px;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+}
+
+.operators {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px 0px 0px 0px;
+}
+
+.ops {
+    display: flex;
+    flex-shrink: 0;
+    width: 75px;
+    height: 75px;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+}
+
+.clear {
+    font-size: 20px;
+}

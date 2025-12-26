@@ -45,7 +45,7 @@ const op = document.querySelector(".operators");
 for( let i = 0; i < 10; ++i ) {
     const numChild = document.createElement("button");
     numChild.textContent = i;
-    numChild.setAttribute("class", `${i}`);
+    numChild.setAttribute("class", `${i} num`);
     num.appendChild(numChild);
 }
 
